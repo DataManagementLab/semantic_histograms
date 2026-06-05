@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling>=1.16"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project]
+name = "mmce"
+dynamic = ["version"]
+description = "Multi-Modal Cardinality Estimation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Matthias Urban", email = "matthias.urban@tu-darmstadt.de" }
+]
+dependencies = [
+  "torch>=2.10.0",
+  "nltk>=3.9.2",
+  "safetensors>=0.7.0",
+  "ollama>=0.6.1",
+  "matplotlib>=3.10.8",
+  "seaborn>=0.13.2",
+  "requests>=2.32.5",
+  "beautifulsoup4>=4.14.3",
+  "huggingface_hub>=1.14.0",
+  "transformers>=5.2.0",
+  "scikit-learn>=1.8.0",
+  "kvpress @ git+ssh://git@github.com/GabrieleSanmartino/kvpress.git@c91ae34e99cd14160dd18e214759d5256ed38f75"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.0.400",
+  "mypy>=1.0",
+  "pandas>=3.0.1",
+  "seaborn>=0.13.2"
+]
+
+[tool.hatch.version]
+path = "src/mmce/__init__.py"
+
